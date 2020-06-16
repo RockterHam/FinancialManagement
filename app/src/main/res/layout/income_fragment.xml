@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_bill_salary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/salary_off"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="工资"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_bill_wage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/wage_off"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="兼职"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_bill_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/stock_off"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="理财"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_bill_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/gift_off"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="礼金"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_bill_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/others_off"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="其它"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <EditText
+                android:id="@+id/et_income_remark"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:background="@color/gray"
+                android:text="请在此输入备注"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_bill_income_amount"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="0"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxLength="8"
+                android:textSize="30sp"
+                android:gravity="end"
+                android:paddingRight="20dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/bt_income_7"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="7" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_8"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="8" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_9"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="9" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_Enter"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/colorMain"
+                android:text="完成" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/bt_income_4"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="4" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_5"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="5" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_6"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="6" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_Backspace"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="Backspace" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/bt_income_1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="1" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="2" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_3"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="3" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_Delete"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="Del" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/bt_income_Dot"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="." />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_0"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:text="0" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/black"/>
+
+            <Button
+                android:id="@+id/bt_income_Date"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@color/gray"
+                android:text="Date" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
