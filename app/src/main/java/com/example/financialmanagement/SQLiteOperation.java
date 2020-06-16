@@ -35,10 +35,12 @@ public class SQLiteOperation {
     public void update(Context context, String uuid, String name, String value){
         MySQLiteOpenHelper helper = new MySQLiteOpenHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues v = new ContentValues();
-        v.put(name, value);
-        String[] whereArgs= {uuid}; //查询条件的参数值
-        db.update("Info", v, "UUID" , whereArgs);
+        //ContentValues v = new ContentValues();
+        //v.put(name, value);
+        //String[] whereArgs= {uuid}; //查询条件的参数值
+        //db.update("Info", v, "UUID = ？" , whereArgs);
+        String sql = "update Info set "+name+" = '"+value+"' where uuid = '"+uuid+"';" ;
+        db.execSQL(sql);
     }
 
     public List<Map<String, Object>> query(Context context, String tablename) {
@@ -79,9 +81,8 @@ public class SQLiteOperation {
         MySQLiteOpenHelper helper = new MySQLiteOpenHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
         //db.delete(tablename, "UUID > ?", new String[] {UUID});
-        String sql = "DELETE FROM " + tablename + " WHERE UUID = 'UUID';";
+        String sql = "DELETE FROM " + tablename + " WHERE UUID = '"+ UUID +"';";
         db.execSQL(sql);
         db.close();
-        System.out.println(UUID);
     }
 }

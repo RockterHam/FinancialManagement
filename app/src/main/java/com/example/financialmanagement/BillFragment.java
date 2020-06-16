@@ -1,6 +1,5 @@
 package com.example.financialmanagement;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -49,6 +48,7 @@ public class BillFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         int num = getArguments().getInt(ARG_SECTION_NUMBER);
         Date date = new Date();
+
         if (num == 1) {
             View view = inflater.inflate(R.layout.expend_fragment, container, false);
             getExpendId(view);

@@ -1,5 +1,8 @@
 package com.example.financialmanagement;
 
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -10,9 +13,13 @@ public class BillFragmentPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+    @NonNull
+
+
     @Override
     public Fragment getItem(int position) {
-        return BillFragment.newInstance(position + 1);
+        BillFragment billFragment = new BillFragment();
+        return billFragment.newInstance(position + 1);
     }
 
     @Override

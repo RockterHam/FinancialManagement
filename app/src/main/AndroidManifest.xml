@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BillAttributes"></activity>
+        <activity android:name=".UpdateIncomeAttributes"></activity>
+        <activity android:name=".UpdateExpendAttributes" />
+        <activity android:name=".BillAttributes" />
         <activity
             android:name=".NewBill"
             android:label="@string/title_activity_new_bill"

@@ -67,7 +67,6 @@ public class HomeFragment extends Fragment {
             intent.putExtra("amount",map.get("amount").toString());
             intent.putExtra("date",map.get("date").toString());
             intent.putExtra("remark",map.get("remark").toString());
-            System.out.println(map.get("UUID").toString()+"启动前");
             startActivityForResult(intent,1);
         });
 

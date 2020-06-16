@@ -1,20 +1,30 @@
 package com.example.financialmanagement;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class BillAttributes extends AppCompatActivity {
 
     private TextView tvAttriCategory , tvAttriExIn , tvAttriAmount , tvAttriDate , tvAttriRemark ,
             tvAttriEdit , tvAttriDel;
     private ImageView ivAttriCategory;
-    String category;
+    private String category;
+    private SQLiteOperation sqLiteOperation = new SQLiteOperation();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +32,7 @@ public class BillAttributes extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_billattributes);
 
-        SQLiteOperation sqLiteOperation = new SQLiteOperation();
+
         tvAttriCategory = findViewById(R.id.tv_attri_category);
         tvAttriExIn = findViewById(R.id.tv_attri_ex_in);
         tvAttriAmount = findViewById(R.id.tv_attri_amount);
@@ -33,7 +43,6 @@ public class BillAttributes extends AppCompatActivity {
         ivAttriCategory = findViewById(R.id.iv_attri_category);
 
         Intent intent = getIntent();
-        System.out.println(intent.getStringExtra("UUID")+"启动后");
 
         category = intent.getStringExtra("category");
         tvAttriCategory.setText(category);
@@ -51,11 +60,26 @@ public class BillAttributes extends AppCompatActivity {
         setIcon();
 
         tvAttriEdit.setOnClickListener(v -> {
-
+            if (intent.getStringExtra("amount").contains("-")){
+                Intent updateIntent = new Intent(this, UpdateExpendAttributes.class);
+                updateIntent.putExtra("category", intent.getStringExtra("category"));
+                updateIntent.putExtra("date", intent.getStringExtra("date"));
+                updateIntent.putExtra("amount", intent.getStringExtra("amount"));
+                updateIntent.putExtra("UUID", intent.getStringExtra("UUID"));
+                updateIntent.putExtra("remark", intent.getStringExtra("remark"));
+                startActivity(updateIntent);
+            }else {
+                Intent updateIntent = new Intent(this, UpdateIncomeAttributes.class);
+                updateIntent.putExtra("category", intent.getStringExtra("category"));
+                updateIntent.putExtra("date", intent.getStringExtra("date"));
+                updateIntent.putExtra("amount", intent.getStringExtra("amount"));
+                updateIntent.putExtra("UUID", intent.getStringExtra("UUID"));
+                updateIntent.putExtra("remark", intent.getStringExtra("remark"));
+                startActivity(updateIntent);
+            }
         });
         tvAttriDel.setOnClickListener(v -> {
-            sqLiteOperation.delete(this,"Info",intent.getStringExtra("UUID"));
-
+            showSimpleDialog(intent, this);
         });
     }
 
@@ -100,5 +124,28 @@ public class BillAttributes extends AppCompatActivity {
         if (category.equals("其它")){
             ivAttriCategory.setImageResource(R.drawable.others_off);
         }
+    }
+
+    private void showSimpleDialog(Intent intent,Context context) {
+        new AlertDialog.Builder(this)
+            .setTitle("确认删除")
+            .setMessage("删除后数据不可恢复")
+        //监听下方button点击事件
+            .setPositiveButton("删除", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    sqLiteOperation.delete(context,"Info",intent.getStringExtra("UUID"));
+                    finish();
+                }
+            })
+            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            })
+            //设置对话框是可取消的
+            .setCancelable(true)
+            .create().show();
     }
 }
