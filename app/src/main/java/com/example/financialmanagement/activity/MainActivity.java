@@ -1,19 +1,18 @@
-package com.example.financialmanagement;
+package com.example.financialmanagement.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.financialmanagement.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .getColor(R.color.colorTextPressed));*/
                 ivStatistics.setImageResource(R.drawable.ic_statistics_on);
                 if(fmStatistics == null){
-                    //fmStatistics = new StatisticsFragment();
+                    fmStatistics = new StatisticsFragment();
                     mTransaction.add(R.id.home_container, fmStatistics, "Statistics_fragment");
                 }else {
                     mTransaction.show(fmStatistics);

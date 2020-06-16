@@ -1,6 +1,4 @@
-package com.example.financialmanagement;
-
-import android.os.Bundle;
+package com.example.financialmanagement.activity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

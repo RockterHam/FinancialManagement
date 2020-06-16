@@ -1,10 +1,9 @@
-package com.example.financialmanagement;
+package com.example.financialmanagement.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class MySQLiteOpenHelper extends SQLiteOpenHelper {

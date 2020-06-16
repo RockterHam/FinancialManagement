@@ -1,4 +1,4 @@
-package com.example.financialmanagement;
+package com.example.financialmanagement.activity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.financialmanagement.R;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.financialmanagement;
+package com.example.financialmanagement.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.view.Window;
 
+import com.example.financialmanagement.R;
 import com.google.android.material.tabs.TabLayout;
 
 

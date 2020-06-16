@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateIncomeAttributes"></activity>
-        <activity android:name=".UpdateExpendAttributes" />
-        <activity android:name=".BillAttributes" />
-        <activity
-            android:name=".NewBill"
-            android:label="@string/title_activity_new_bill"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.UpdateIncomeAttributes" />
+        <activity android:name=".activity.UpdateExpendAttributes" />
+        <activity android:name=".activity.BillAttributes" />
+        <activity
+            android:name=".activity.NewBill"
+            android:label="@string/title_activity_new_bill"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.MainActivity">
+
         </activity>
     </application>
 

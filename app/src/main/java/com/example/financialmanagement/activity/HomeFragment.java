@@ -1,4 +1,4 @@
-package com.example.financialmanagement;
+package com.example.financialmanagement.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,9 +14,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigkoo.pickerview.TimePickerView;
+import com.example.financialmanagement.R;
+import com.example.financialmanagement.dao.SQLiteOperation;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,7 +32,6 @@ public class HomeFragment extends Fragment {
     private TextView tvHomeExpend, tvHomeIncome, tvHomeYear, tvHomeMonth;
     private ArrayAdapter<String> adapter;
     private List<Map<String, Object>> list;
-    private SQLiteOperation sqLiteOperation;
     private TimePickerView pvTime;
     private LinearLayout ltHomeTimeseletor;
     String dateStr = "";//现在列表中的表项的时间，精确到yy-mm-dd
@@ -134,7 +134,6 @@ public class HomeFragment extends Fragment {
     private void freshList(){
         HomeAdapter adapter = new HomeAdapter(getActivity(), getData(dateStr));
         listView.setAdapter(adapter);
-        System.out.println(dateStr);
         calcAmount(getData(dateStr));
     }
 

@@ -1,4 +1,4 @@
-package com.example.financialmanagement;
+package com.example.financialmanagement.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.TimePickerView;
+import com.example.financialmanagement.R;
+import com.example.financialmanagement.dao.SQLiteOperation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
